@@ -6,6 +6,9 @@ export class GetPasswordsByUserService {
       const passwords = await prismaClient.password.findMany({
         where: {
           user_id
+        },
+        orderBy: {
+          label: "asc"
         }
       })
 
